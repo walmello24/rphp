@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["walmello24@gmail.com"]
 
   spec.summary       = %q{This gem was make to make PHP simple projects but in Ruby.}
-  spec.description   = %q{It will not to translate literally ruby to PHP .}
+  spec.description   = %q{Make PHP simple projects with Ruby.}
   spec.homepage      = "https://www.github.com/walmello24/rphp"
   spec.license       = "MIT"
 
