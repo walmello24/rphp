@@ -22,7 +22,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+WARNING! DO NOT USE IT YET! I'TS DOING ABSOLUTELY NOTHING AT THE MOMENT!!!
 
 ## Development
 
