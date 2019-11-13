@@ -24,7 +24,13 @@ Or install it yourself as:
 
 ```ruby
 require 'rphp'
-RPHP::serve(port) # => port é o numero da porta
+
+server = Rphp::Server.new # => Declare a Server object
+server.port = 4321 # => optionally set the port
+server.input = 'ruby' # => the ruby input folder, optianal
+server.output = 'public_html' # => the php output folder, optional 
+
+server.start # => and at last start the server
 ```
 ## Development
 
