@@ -32,6 +32,9 @@ server.output = 'public_html' # => the php output folder, optional
 
 server.start # => and at last start the server
 ```
+if any of the folders does not exists, it will generate a input folder with
+a basic index.php.erb file
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
