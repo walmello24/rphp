@@ -22,8 +22,10 @@ Or install it yourself as:
 
 ## Usage
 
-WARNING! DO NOT USE IT YET! I'TS DOING ABSOLUTELY NOTHING AT THE MOMENT!!!
-
+```ruby
+require 'rphp'
+RPHP::serve(port) # => port é o numero da porta
+```
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.

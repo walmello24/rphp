@@ -1,7 +1,10 @@
 require "rphp/version"
-require "rphp/test"
+require "rphp/main"
 
-module Rphp
+
+module RPHP
   class Error < StandardError; end
-  # Your code goes here...
+  def self.serve port
+  	Server.new port
+  end
 end
