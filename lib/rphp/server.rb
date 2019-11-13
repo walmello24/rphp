@@ -23,9 +23,18 @@ class Rphp::Server
 	end
 
 	def parse_file (input,output)
-		output = output.split('/')[1..-1].join('/')
-			.split('.')[0..-2].join('.')
-		content = Tilt.new(input).render
+		if output.split('/') == 3
+			output = output.split('/')[1..-1]
+				.join('/')
+				.split('.')[0..-2]
+				.join('.')
+		end
+			
+		if Tilt.templates_for(input).any?
+			content = Tilt.new(input).render
+		else
+			content = File.read(input)
+		end
 		File.write(output,content)
 	end
 
@@ -33,12 +42,6 @@ class Rphp::Server
 		puts "PHP development server started at port #{@port}"
 		`nohup php -S localhost:#{@port} -t #{@output} >/dev/null 2>&1 &`
 		listen
-	end
-
-	def teste
-		FileUtils.rm_rf(@output)
-		generate_initial_files
-		parse_folder "./#{@input}/*"
 	end
 
 	def parse_folder folder_name
@@ -59,6 +62,8 @@ class Rphp::Server
 	end
 
 	def listen
+		FileUtils.rm_rf(@output)
+		generate_initial_files
 		parse_folder "./#{@input}/*"
 		listener = Listen.to(@input) do |modified, added, removed|
 			parse_folder "./#{@input}/*"
